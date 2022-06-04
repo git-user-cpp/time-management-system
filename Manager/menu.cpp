@@ -24,6 +24,7 @@ SOFTWARE.
 
 #include "menu.h"
 
+//main menu function
 void mainMenu()
 {
     std::cout   

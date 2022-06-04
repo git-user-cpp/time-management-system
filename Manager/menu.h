@@ -25,4 +25,5 @@ SOFTWARE.
 #pragma once
 #include <iostream>
 
+//main menu function
 void mainMenu();

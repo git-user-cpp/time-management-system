@@ -26,7 +26,39 @@ SOFTWARE.
 
 int main()
 {
+    //variable for menu options
+    int menu;
+
+    //enum type for better readability if-else
+    enum {exit, display_table, move_task, create_task, delete_task, display_license};
+
+    //main menu call
     mainMenu();
+
+    if(menu == exit)
+    {
+        return 0;
+    }
+    else if(menu == display_table)
+    {
+        //output the table
+    }
+    else if(menu == move_task)
+    {
+        //implement the logic of movement
+    }
+    else if(menu == create_task)
+    {
+        //implement the logic of creating
+    }
+    else if(menu == delete_task)
+    {
+        //implement the logic of deleting
+    }
+    else if(menu == display_license)
+    {
+        //output the license
+    }
 
     return 0;
 }
