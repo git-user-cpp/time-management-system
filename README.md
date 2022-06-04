@@ -1,6 +1,9 @@
 # Time management system
 
+⏳ Time management system is implemented in C ++. Created for rational time management ⏳
+
 ## ⚠️ LICENSE ⚠️
+
 MIT License
 
 Copyright (c) 2022 m!haly4
@@ -22,3 +25,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## 💻 How to use this app 💻
+
+1) ⚠️ **The application is designed for Linux, so avoid using other systems or remake the program to avoid bugs.** ⚠️
+2) 🗂️ Download *all* files and put them in a one directory.
+3) ⚒️ Compile the program with *clang++* or *g++*, whether you like.
+    - Сompilation example
+    ```
+    clang++ -o main main.cpp menu.cpp task.cpp
+    ```
+4) 💥 Then, in your directory will appear file *"main"*.
+    - If you want to check files in current directory
+    ```
+    ls -alR
+    ```
+    - Or
+    ```
+    ls -a -l -R
+    ```
+5) 🌠 Execute the program with command:
+    ```
+    ./main
+    ```
+6) 👷 Select the desired function by pressing **1** or **2** or **3** or **4** or **5** + **Enter**. If you want to close the app, press **0** + **Enter** in main menu.
