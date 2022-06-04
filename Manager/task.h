@@ -24,3 +24,5 @@ SOFTWARE.
 
 #pragma once
 #include "menu.h"
+
+//declare task logic
