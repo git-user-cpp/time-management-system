@@ -57,7 +57,13 @@ int main()
     }
     else if(menu == display_license)
     {
-        //output the license
+        std::cout   << " _____________________________________________________________" << std::endl
+                    << "| ---> Creator of this program: git-user-cpp (m!haly4) <---" << std::endl
+                    << "|_____________________________________________________________" << std::endl
+                    << "|      ---> Link: https://github.com/git-user-cpp <---" << std:: endl
+                    << "|_____________________________________________________________" << std::endl
+                    << "| ---> License: https://github.com/git-user-cpp/time-management-system/blob/main/LICENSE <---" << std::endl
+                    << "|_____________________________________________________________" << std::endl;
     }
 
     return 0;
