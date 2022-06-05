@@ -28,44 +28,51 @@ int main()
 {
     //variable for menu options
     int menu;
+    //delimiter for main menu
+    std::string delimiter = "|_____________________________________________________________|\n\n";
 
     //enum type for better readability if-else
     enum {exit, display_table, move_task, create_task, delete_task, display_license};
 
     //main menu call
     mainMenu();
+    std::cin >> menu;
+    std::cout << delimiter;
+    while(menu != exit)
+    {
+        if(menu == display_table)
+        {
+            //output the table
+        }
+        else if(menu == move_task)
+        {
+            //implement the logic of movement
+        }
+        else if(menu == create_task)
+        {
+            //implement the logic of creating
+        }
+        else if(menu == delete_task)
+        {
+            //implement the logic of deleting
+        }
+        else if(menu == display_license)
+        {
+            //outputting info
+            std::cout   << " _____________________________________________________________" << std::endl
+                        << "| ---> Creator of this program: git-user-cpp (m!haly4) <---" << std::endl
+                        << "|_____________________________________________________________" << std::endl
+                        << "|      ---> Link: https://github.com/git-user-cpp <---" << std:: endl
+                        << "|_____________________________________________________________" << std::endl
+                        << "| ---> License: https://github.com/git-user-cpp/time-management-system/blob/main/LICENSE <---" << std::endl
+                        << "|_____________________________________________________________" << std::endl;
+        }
+    }
 
-    if(menu == exit)
-    {
-        return 0;
-    }
-    else if(menu == display_table)
-    {
-        //output the table
-    }
-    else if(menu == move_task)
-    {
-        //implement the logic of movement
-    }
-    else if(menu == create_task)
-    {
-        //implement the logic of creating
-    }
-    else if(menu == delete_task)
-    {
-        //implement the logic of deleting
-    }
-    else if(menu == display_license)
-    {
-        //outputting info
-        std::cout   << " _____________________________________________________________" << std::endl
-                    << "| ---> Creator of this program: git-user-cpp (m!haly4) <---" << std::endl
-                    << "|_____________________________________________________________" << std::endl
-                    << "|      ---> Link: https://github.com/git-user-cpp <---" << std:: endl
-                    << "|_____________________________________________________________" << std::endl
-                    << "| ---> License: https://github.com/git-user-cpp/time-management-system/blob/main/LICENSE <---" << std::endl
-                    << "|_____________________________________________________________" << std::endl;
-    }
+
+    std::cout   << " _____________________________________________________________" << std::endl
+                << "|                   The program is stopped                    |" << std::endl
+                << "|_____________________________________________________________|" << std::endl;
 
     return 0;
 }
