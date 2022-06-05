@@ -29,3 +29,6 @@ SOFTWARE.
 
 //main menu function
 void mainMenu();
+
+//function for table output
+void outputTable();

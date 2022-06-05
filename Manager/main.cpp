@@ -57,6 +57,7 @@ int main()
     }
     else if(menu == display_license)
     {
+        //outputting info
         std::cout   << " _____________________________________________________________" << std::endl
                     << "| ---> Creator of this program: git-user-cpp (m!haly4) <---" << std::endl
                     << "|_____________________________________________________________" << std::endl
