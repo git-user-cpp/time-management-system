@@ -28,6 +28,8 @@ int main()
 {
     //variable for menu options
     int menu;
+    //vector for the task elements
+    std::vector<Task> table;
     //delimiter for main menu
     std::string delimiter = "|_____________________________________________________________|\n\n";
 
