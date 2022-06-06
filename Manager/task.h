@@ -25,4 +25,19 @@ SOFTWARE.
 #pragma once
 #include "menu.h"
 
-//declare task logic
+//Task class
+class Task
+{
+    private:
+        std::string name;
+        std::string date;
+        std::string type;
+    public:
+        void setName(std::string name);
+        void setDate(std::string date);
+        void setType(std::string type);
+
+        std::string getName();
+        std::string getDate();
+        std::string getType();
+};
