@@ -55,3 +55,15 @@ void readData(std::vector<Task> &table);
 
 //output data from the vector
 void readFile(std::vector<Task> &table);
+
+//function for changing the task type
+void mvType(std::vector<Task> &table, std::string taskName,std::string taskType);
+
+//function for changing the task name
+void mvName(std::vector<Task> &table, std::string taskName, std::string newName);
+
+//function for changing the task deadline
+void mvDate(std::vector<Task> &table, std::string taskName, std::string newDeadline);
+
+//function for reading deleted tasks
+void readDeletedData(std::vector<Task> &table);
