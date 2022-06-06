@@ -24,4 +24,30 @@ SOFTWARE.
 
 #include "task.h"
 
-//implement task logic
+//setters for the class "Task"
+void Task::setName(std::string name)
+{
+    this->name = name;
+}
+void Task::setDate(std::string date)
+{
+    this->date = date;
+}
+void Task::setType(std::string type)
+{
+    this->type = type;
+}
+
+//getters for the class "Task"
+std::string Task::getName()
+{
+    return name;
+}
+std::string Task::getDate()
+{
+    return date;
+}
+std::string Task::getType()
+{
+    return type;
+}
