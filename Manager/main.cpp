@@ -26,7 +26,7 @@ SOFTWARE.
 
 int main()
 {
-    //variable for menu options
+    //variables for menu options
     Task new_task;
     int menu;
     std::string menus;
@@ -40,8 +40,10 @@ int main()
     std::string answer;
     std::string newName;
     std::string newDeadline;
+
     //vector for the task elements
     std::vector<Task> table;
+
     //delimiter for main menu
     std::string delimiter = "|_____________________________________________________________|\n\n";
 
@@ -51,39 +53,26 @@ int main()
     //main menu call
     mainMenu(menus, menu);
     std::cout << delimiter;
+
+    //menu loop
     while(menu != exit)
     {
+        //displaying task table
         if(menu == display_table)
         {
-
             readData(table); //entering data from a file into a vector
 
             table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
-
-            #ifdef testing
-
-                std::cout << table.capacity() << std::endl;
-                readFile(table);
-                    
-            #endif
 
             readFile(table); //output each element
 
             table.clear(); //deleting each vector element
             table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
 
-            #ifdef testing
-
-                std::cout << "after erasing" << std::endl;
-
-                std::cout << table.capacity() << std::endl;
-                readFile(table);
-                    
-            #endif
-
             mainMenu(menus, menu);
             std::cout << delimiter << std::endl;
         }
+        //change a task
         else if(menu == move_task)
         {
             readData(table);
@@ -133,6 +122,7 @@ int main()
             mainMenu(menus, menu);
             std::cout << delimiter << std::endl;
         }
+        //create a new task
         else if(menu == create_task)
         {
             readData(table);
@@ -162,22 +152,11 @@ int main()
                 
             table.clear(); //deleting each vector element
             table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
-
-            #ifdef testing
-
-                std::cout << "after erasing" << std::endl;
-
-                std::cout << table.capacity() << std::endl;
-                for(auto el : table)
-                {
-                    std::cout << el.getName() << " " << el.getDate() << " " << el.getType() << std::endl;
-                }
-                    
-            #endif
                 
             mainMenu(menus, menu);
             std::cout << delimiter << std::endl;
         }
+        //displaying deleted tasks
         else if(menu == display_del_task)
         {
             readData(table); //entering data from a file into a vector

@@ -28,7 +28,6 @@ SOFTWARE.
 #include <vector>
 #include <sstream>
 #include <fstream>
-// #define testing
 
 //main menu function
 void mainMenu(std::string &menus, int &menu);
