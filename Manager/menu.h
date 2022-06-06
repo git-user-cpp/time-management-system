@@ -26,9 +26,11 @@ SOFTWARE.
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
+#include <fstream>
 
 //main menu function
-void mainMenu();
+void mainMenu(std::string &menus, int &menu);
 
 //function for table output
 void outputTable();

@@ -33,11 +33,37 @@ class Task
         std::string date;
         std::string type;
     public:
+        //setters
         void setName(std::string name);
         void setDate(std::string date);
         void setType(std::string type);
 
+        //getters
         std::string getName();
         std::string getDate();
         std::string getType();
+
+        //function for entering the data
+        void DataEntry(std::string bufer1, std::string bufer2, std::string bufer3);
 };
+
+//function for saving the data
+void saveData(std::vector<Task> &table);
+
+//to read data from file to vector
+void readData(std::vector<Task> &table);
+
+//output data from the vector
+void readFile(std::vector<Task> &table);
+
+//function for changing the task type
+void mvType(std::vector<Task> &table, std::string taskName,std::string taskType);
+
+//function for changing the task name
+void mvName(std::vector<Task> &table, std::string taskName, std::string newName);
+
+//function for changing the task deadline
+void mvDate(std::vector<Task> &table, std::string taskName, std::string newDeadline);
+
+//function for reading deleted tasks
+void readDeletedData(std::vector<Task> &table);
