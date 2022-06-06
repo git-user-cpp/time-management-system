@@ -25,7 +25,7 @@ SOFTWARE.
 #include "menu.h"
 
 //main menu function
-void mainMenu()
+void mainMenu(std::string &menus, int &menu)
 {
     std::cout   << std::endl
                 << " _____________________________________________________________" << std::endl
@@ -66,5 +66,8 @@ void mainMenu()
                 << "|                     [0] Stop the program                    |" << std::endl
                 << "|_____________________________________________________________|" << std::endl
                 << " _____________________________________________________________ " << std::endl
-                << "                          Your choise:";
+                << "                          Your choise: ";
+
+    getline(std::cin, menus);
+    std::stringstream(menus) >> menu;
 }

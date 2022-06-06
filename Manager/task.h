@@ -33,11 +33,19 @@ class Task
         std::string date;
         std::string type;
     public:
+        //setters
         void setName(std::string name);
         void setDate(std::string date);
         void setType(std::string type);
 
+        //getters
         std::string getName();
         std::string getDate();
         std::string getType();
+
+        //function for entering the data
+        void DataEntry(std::string bufer1, std::string bufer2, std::string bufer3);
 };
+
+//function for saving the data
+void saveData(std::vector<Task> &table);

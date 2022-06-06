@@ -27,7 +27,14 @@ SOFTWARE.
 int main()
 {
     //variable for menu options
+    Task new_task;
     int menu;
+    std::string menus;
+    std::string counters;
+    int counter;
+    std::string bufer1;
+    std::string bufer2;
+    std::string bufer3;
     //vector for the task elements
     std::vector<Task> table;
     //delimiter for main menu
@@ -37,8 +44,7 @@ int main()
     enum {exit, display_table, move_task, create_task, delete_task, display_del_task, display_license};
 
     //main menu call
-    mainMenu();
-    std::cin >> menu;
+    mainMenu(menus, menu);
     std::cout << delimiter;
     while(menu != exit)
     {
@@ -52,7 +58,47 @@ int main()
         }
         else if(menu == create_task)
         {
-            //implement the logic of creating
+            std::cout   << " _____________________________________________________________" << std::endl
+                        << "| Enter a number of tasks to emplace: ";
+            getline(std::cin, counters);
+            std::cout   << "|_____________________________________________________________" << std::endl;
+            std::stringstream(counters) >> counter;
+
+            for(int i = 0; i < counter; i++) //entering new words(depends on the number)
+            {
+                std::cout   << " _____________________________________________________________" << std::endl
+                            << "| Enter a new task: ";
+                getline(std::cin, bufer1);
+                std::cout   << "| Enter deadline for this task: ";
+                getline(std::cin, bufer2);
+                std::cout   << "| Enter type for this task (to do or done): ";
+                getline(std::cin, bufer3);
+                 std::cout   << "|_____________________________________________________________" << std::endl;
+
+                new_task.DataEntry(bufer1, bufer2, bufer3);
+
+                table.push_back(new_task);
+            }
+
+            saveData(table); //saving data into a file
+                
+            table.clear(); //deleting each vector element
+            table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
+
+            #ifdef testing
+
+                std::cout << "after erasing" << std::endl;
+
+                std::cout << table.capacity() << std::endl;
+                for(auto el : table)
+                {
+                    std::cout << el.getName() << " " << el.getDate() << " " << el.getType() << std::endl;
+                }
+                    
+            #endif
+                
+            mainMenu(menus, menu);
+            std::cout << delimiter << std::endl;
         }
         else if(menu == delete_task)
         {

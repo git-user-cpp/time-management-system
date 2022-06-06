@@ -51,3 +51,39 @@ std::string Task::getType()
 {
     return type;
 }
+
+//function for entering the data
+void Task::DataEntry(std::string bufer1, std::string bufer2, std::string bufer3)
+{
+    this->setName(bufer1);
+    this->setDate(bufer2);
+    this->setType(bufer3);
+}
+
+//function for saving the data
+void saveData(std::vector<Task> &table)
+{
+    std::fstream record;
+    record.open("table.txt", std::ios::out); //opening the file to add data to the end
+
+        if(record)
+        {            
+            for(auto &el : table) //recording each element into file
+            {
+                record << el.getName() << '\n';
+                record << el.getDate() << '\n';
+                record << el.getType() << '\n';
+            }
+            record.close();
+        }
+        else
+        {
+            std::cout   << " _____________________________________________________________" << std::endl
+                        << "|                    Error(file recording)                    |" << std::endl
+                        << "|_____________________________________________________________|" << std::endl;
+        }
+
+    std::cout   << " _____________________________________________________________" << std::endl
+                << "|                       Data is recorded                      |" << std::endl
+                << "|_____________________________________________________________|" << std::endl;
+}
