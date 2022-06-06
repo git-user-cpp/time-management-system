@@ -32,7 +32,7 @@ int main()
     std::string delimiter = "|_____________________________________________________________|\n\n";
 
     //enum type for better readability if-else
-    enum {exit, display_table, move_task, create_task, delete_task, display_license};
+    enum {exit, display_table, move_task, create_task, delete_task, display_del_task, display_license};
 
     //main menu call
     mainMenu();
@@ -55,6 +55,10 @@ int main()
         else if(menu == delete_task)
         {
             //implement the logic of deleting
+        }
+        else if(menu == display_del_task)
+        {
+            //implement the logic
         }
         else if(menu == display_license)
         {
