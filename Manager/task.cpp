@@ -87,3 +87,68 @@ void saveData(std::vector<Task> &table)
                 << "|                       Data is recorded                      |" << std::endl
                 << "|_____________________________________________________________|" << std::endl;
 }
+
+//to read data from file to vector
+void readData(std::vector<Task> &table)
+{
+    Task task; //variable for input into the vector
+    char str[510]; //string to read from a file
+    int counter = 0;
+    int flag = 0;
+
+    std::fstream reading;
+    reading.open("table.txt", std::ios::in);
+
+        if(reading)
+        {
+            while (reading.getline(str, 510, '\n')) //reading each line of the file
+            {
+                if(counter == 0 || counter % 3 == 0) //separation of the word from its translation
+                {
+                    task.setName(str);
+                    flag++;
+                }
+                else if(counter == 1 || counter % 4 == 0)
+                {
+                    task.setDate(str);
+                    flag++;
+                }
+                else if(counter == 2 || counter % 5 == 0)
+                {
+                    task.setType(str);
+                    flag++;
+                }
+
+                if(flag % 3 == 0) //if a word and its translation are found, insert them into the vector
+                {
+                    table.push_back(task);
+                }
+
+
+                counter++;
+            }
+            
+            reading.close();
+        }
+        else
+        {
+            std::cout   << " _____________________________________________________________" << std::endl
+                        << "|                     Error(file reading)                     |" << std::endl
+                        << "|_____________________________________________________________|" << std::endl;
+        }
+
+    std::cout   << " _____________________________________________________________" << std::endl
+                << "|                         Data is red                         |" << std::endl
+                << "|_____________________________________________________________|" << std::endl;
+}
+
+//output data from the vector
+void readFile(std::vector<Task> &table)
+{
+    for(auto &element : table)
+    {
+        std::cout   << " _____________________________________________________________" << std::endl
+                    << "| " << element.getName() << " --> " << element.getDate() << " --> " << element.getType() << std::endl
+                    << "|_____________________________________________________________" << std::endl;
+    }
+}

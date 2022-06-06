@@ -49,3 +49,9 @@ class Task
 
 //function for saving the data
 void saveData(std::vector<Task> &table);
+
+//to read data from file to vector
+void readData(std::vector<Task> &table);
+
+//output data from the vector
+void readFile(std::vector<Task> &table);

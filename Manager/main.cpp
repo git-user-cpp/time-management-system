@@ -50,7 +50,34 @@ int main()
     {
         if(menu == display_table)
         {
-            //output the table
+
+            readData(table); //entering data from a file into a vector
+
+            table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
+
+            #ifdef testing
+
+                std::cout << table.capacity() << std::endl;
+                readFile(table);
+                    
+            #endif
+
+            readFile(table); //output each element
+
+            table.clear(); //deleting each vector element
+            table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
+
+            #ifdef testing
+
+                std::cout << "after erasing" << std::endl;
+
+                std::cout << table.capacity() << std::endl;
+                readFile(table);
+                    
+            #endif
+
+            mainMenu(menus, menu);
+            std::cout << delimiter << std::endl;
         }
         else if(menu == move_task)
         {
