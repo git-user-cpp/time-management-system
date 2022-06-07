@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "menu.h"
+#include "menu.hpp"
 
 //main menu function
 void mainMenu(std::string &menus, int &menu)
