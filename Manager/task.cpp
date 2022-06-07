@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "task.h"
+#include "task.hpp"
 
 //setters for the class "Task"
 void Task::setName(std::string name)
