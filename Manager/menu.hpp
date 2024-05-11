@@ -31,6 +31,3 @@ SOFTWARE.
 
 //main menu function
 void mainMenu(std::string &menus, int &menu);
-
-//function for table output
-void outputTable();
