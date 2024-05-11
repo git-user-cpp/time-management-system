@@ -67,3 +67,9 @@ void mvDate(std::vector<Task> &table, std::string taskName, std::string newDeadl
 
 //function for reading deleted tasks
 void readDeletedData(std::vector<Task> &table);
+
+//function for convert date to int
+void retrive_deadline(const std::string& date, int& day, int& month, int& year);
+
+//function for reading tasks that have a deadline after the specified date
+void readLaterDate(std::vector<Task>& table, int& day, int& month, int& year);
