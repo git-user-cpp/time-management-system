@@ -32,6 +32,7 @@ int main()
     std::string menus;
     std::string counters;
     int counter;
+    int day, month, year;
     std::string bufer1;
     std::string bufer2;
     std::string bufer3;
@@ -48,7 +49,7 @@ int main()
     std::string delimiter = "|_____________________________________________________________|\n\n";
 
     //enum type for better readability if-else
-    enum {exit, display_table, move_task, create_task, display_del_task, display_license};
+    enum {exit, display_table, move_task, create_task, display_del_task, display_later_task, display_license};
 
     //main menu call
     mainMenu(menus, menu);
@@ -164,6 +165,27 @@ int main()
             table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
 
             readDeletedData(table);
+
+            table.clear(); //deleting each vector element
+            table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
+
+            mainMenu(menus, menu);
+            std::cout << delimiter << std::endl;
+        }
+        //displaying later tasks
+        else if (menu == display_later_task)
+        {
+            readData(table); //entering data from a file into a vector
+
+            table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
+
+            std::cout << " _____________________________________________________________" << std::endl
+                << "| Enter your date with \"ENTER \":" << std::endl;
+            std::cin >> day >> month >> year;
+            std::cin.ignore();
+            std::cout << "|_____________________________________________________________" << std::endl;
+
+            readLaterDate(table, day, month, year);
 
             table.clear(); //deleting each vector element
             table.shrink_to_fit(); //changing the size of the vector to the actual size of its capacity
