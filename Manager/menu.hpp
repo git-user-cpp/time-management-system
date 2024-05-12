@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2022 Andrew Kushyk
+Copyright (c) 2024 Andrew Kushyk, Bohdan Dobrotvor
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -31,6 +31,3 @@ SOFTWARE.
 
 //main menu function
 void mainMenu(std::string &menus, int &menu);
-
-//function for table output
-void outputTable();

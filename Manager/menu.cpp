@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2022 Andrew Kushyk
+Copyright (c) 2024 Andrew Kushyk, Bohdan Dobrotvor
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -54,7 +54,11 @@ void mainMenu(std::string &menus, int &menu)
                 << "|_____________________________________________________________|" << std::endl
                 << " _____________________________________________________________" << std::endl
                 << "|                                                             |" << std::endl
-                << "|                [5] Display author and license               |" << std::endl
+                << "|                   [5] Display later tasks                   |" << std::endl
+                << "|_____________________________________________________________|" << std::endl
+                << " _____________________________________________________________" << std::endl
+                << "|                                                             |" << std::endl
+                << "|                [6] Display author and license               |" << std::endl
                 << "|                         information                         |" << std::endl
                 << "|_____________________________________________________________|" << std::endl
                 << " _____________________________________________________________" << std::endl

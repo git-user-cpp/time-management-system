@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2022 Andrew Kushyk
+Copyright (c) 2024 Andrew Kushyk, Bohdan Dobrotvor
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -220,6 +220,51 @@ void readDeletedData(std::vector<Task> &table)
             std::cout   << " _____________________________________________________________" << std::endl
                         << "| " << element.getName() << " --> " << element.getDate() << " --> " << element.getType() << std::endl
                         << "|_____________________________________________________________" << std::endl;
+        }
+    }
+}
+
+//function for convert (std::string)date to int
+void retrive_deadline(const std::string& date, int& day, int& month, int& year)
+{
+    size_t day_point = date.find('.');
+    size_t month_point = date.find('.', day_point + 1);
+    day = std::stoi(date.substr(0, day_point));
+    month = std::stoi(date.substr(day_point + 1, month_point - day_point - 1));
+    year = std::stoi(date.substr(month_point + 1));
+}
+
+//function for reading tasks that have a deadline after the specified date
+void readLaterDate(std::vector<Task>& table, int& day, int& month, int& year)
+{
+    int flag;
+    int uday, umonth, uyear;
+    for (auto& element : table)
+    {
+        retrive_deadline(element.getDate(), uday, umonth, uyear);
+        if (element.getType() != "deleted")
+        {
+            flag = 0;
+            if (uyear >= year)
+            {
+                if (umonth == month)
+                {
+                    if (uday >= day)
+                    {
+                        flag++;
+                    }
+                }
+                if (umonth > month)
+                {
+                    flag++;
+                }
+            }
+            if (flag > 0)
+            {
+                std::cout << " _____________________________________________________________" << std::endl
+                    << "| " << element.getName() << " --> " << element.getDate() << " --> " << element.getType() << std::endl
+                    << "|_____________________________________________________________" << std::endl;
+            }
         }
     }
 }
