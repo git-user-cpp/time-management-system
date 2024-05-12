@@ -1,4 +1,4 @@
-# Time management system v1.0.1
+# Time management system v1.1.0
 
 ![GitHub all releases](https://img.shields.io/github/downloads/git-user-cpp/time-management-system/total?color=00FF00&logo=github&logoColor=00FF00&style=plastic)
 ![GitHub Repo stars](https://img.shields.io/github/stars/git-user-cpp/time-management-system?color=FFFF00&logo=github&logoColor=FFFF00&style=plastic)
